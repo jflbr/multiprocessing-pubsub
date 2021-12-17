@@ -4,9 +4,8 @@
 [![Build Status](https://travis-ci.org/jflbr/multiprocessing-pubsub .svg?branch=master)](https://travis-ci.org/jflbr/multiprocessing-pubsub )
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 
-## Use case
 
-Your task is to build an python application where a couple of processes communicate with each other using the publish-subscribe messaging pattern to exchange
+A python application where a couple of processes communicate with each other using the publish-subscribe messaging pattern to exchange
 objects.
 ## Application features
 
@@ -30,16 +29,17 @@ where motion is detected
 
 
 ## Working in the development environment
+
+The app uses [`pipenv`](https://pipenv.readthedocs.io/en/latest/) to manage
+dependencies and handle python virtual environments. `pipenv` commands should
+be run from the toplevel directory of the app repository (the one
+containing the `Pipfile`).
+
 Short explanation:
 ```bash
 pipenv sync --dev
 pipenv shell
-invoke compose-up
 invoke test
-```
-
-```bash
-pipenv sync --dev
 ```
 
 ### Entering a python virtual environment
