@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    # image: 'postgres:11.5'
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: 'motion-detection'
+    environment:
+      - 'LOG_LEVEL=DEBUG'
+    ports:
+      - '5432:5432'
+    volumes:
+      - motion-detection-logs:/var/lib/logs
+      # - ./tests/data/init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  motion-detection-logs:

@@ -1,0 +1,17 @@
+*.pyc
+*.swp
+.cache
+.coverage
+.hypothesis
+.idea
+.mypy_cache
+.pytest_cache
+.venv
+.vscode/
+bootstrap.retry
+motion-detection-logs/
+htmlcov/
+tags
+test-report.xml
+tests/performance/.ipynb_checkpoints
+venv

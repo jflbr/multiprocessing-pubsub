@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+docker-compose = "*"
+coverage = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-dotenv = "*"
+pytest-xdist = "*"
+pytest-repeat = "*"
+pytest-sugar = "*"
+black = "==21.12b0"
+ipdb = "*"
+invoke = "*"
+flake8 = "*"
+mypy = "*"
+
+[packages]
+# this is temporary because currently production code uses helpers from the tests to generate data
+faker = "*"
+typing-extensions = "*"
+pydantic = "*"
+bleach = "*"
+
+[requires]
+python_version = "3.8"

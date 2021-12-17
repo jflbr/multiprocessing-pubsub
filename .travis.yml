@@ -1,0 +1,15 @@
+dist: xenial
+language: python
+python: '3.8'
+env:
+  global:
+  - LOG_LEVEL=DEBUG
+install:
+- pip install pipenv
+- pipenv install --dev --system
+
+script:
+- black --check .
+- flake8 motion_detection/
+- pylint motion_detection/
+- pytest --cov=motion_detection tests/

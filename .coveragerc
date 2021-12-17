@@ -1,0 +1,4 @@
+[run]
+include = motion_detection/*
+omit = *tests*
+plugins =
