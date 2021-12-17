@@ -4,6 +4,8 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+      args:                                                 
+        - DEV_DEPENDENCIES_FLAG:'--dev' # remove this if you don't want dev dependencies
     container_name: 'motion-detection'
     environment:
       - 'LOG_LEVEL=DEBUG'

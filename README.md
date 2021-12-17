@@ -29,32 +29,29 @@ where motion is detected
 
 
 ## Working in the development environment
-
+### Using a python virtual environment
 The app uses [`pipenv`](https://pipenv.readthedocs.io/en/latest/) to manage
 dependencies and handle python virtual environments. `pipenv` commands should
 be run from the toplevel directory of the app repository (the one
 containing the `Pipfile`).
 
-Short explanation:
 ```bash
 pipenv sync --dev
+# activate the virtualenv
 pipenv shell
-invoke test
+# any command using python deps (e.g. tests)
+py.test tests/
 ```
 
-### Entering a python virtual environment
+### Using docker and docker-compose for development
 ```bash
-pipenv shell
+docker-compose build --build-arg DEV_DEPENDENCIES_FLAG=--dev
+docker-compose up -d
+# log into the container
+docker exec -it  motion-detection /bin/bash
+# any command using python deps (e.g. tests)
+py.test tests/
 ```
-
-## Service tooling (built-in entrypoints)
-Some built-in commands are provided thanks to the [`cookiecutter-aiohttp`](https://gitlab.aldebaran.com/kumoqi/tools/cookiecutter-aiohttp)
-and [`invoke`](http://www.pyinvoke.org/). They provide an entrypoint that can
-be called to perform common tasks usually run by the developper or the
-continous integration system.
-
-Each built-in entrypoint can be called either from inside or outside the virtual environment.
-
 ### Calling an entrypoint from outside your virtualenv
 ```bash
 pipenv run invoke <entrypoint>
